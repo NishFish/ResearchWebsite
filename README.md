@@ -1,3 +1,0 @@
-# Research
-# Research
-# Research

@@ -1,0 +1,12 @@
+
+body {
+    background-color: pink;
+    color: white;
+}
+
+.my_image {
+    width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
