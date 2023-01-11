@@ -3,8 +3,10 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST','GET'])
 def default_page():
+    if request.method == 'POST':
+       video = request.files['file'] 
     return render_template('index.html', mimetype="text/html")
 
 @app.route('/style.css')
