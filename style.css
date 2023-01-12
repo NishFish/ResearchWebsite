@@ -34,7 +34,7 @@
 .upload {
     font-size: larger;
     font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     display: inline;
     margin-top: 10px;
     text-decoration: underline;
@@ -48,7 +48,15 @@
     margin-right: 10px;
     margin-top: 10px;
     text-decoration: underline;
+    font-size: 30px;
 }
 body {
     background-color: rgb(240, 240, 239);
+}
+
+.uploadButton{
+    display: inline;
+}
+.uploadText{
+    padding: 5px;
 }
