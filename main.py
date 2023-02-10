@@ -9,10 +9,11 @@ app = Flask(__name__)
 def default_page():
     if request.method == 'POST':
         video = request.files['file']
-        if video.filename == '':
-            print('File name is invalid') 
+        if video:
+            filename = secure_filename(video.filename)
+            video.save(os.path.join("/data2/dmitrijs", video.filename))
+        else:
             return redirect(request.url)
-        filename = secure_filename(video.filename)
     return render_template('index.html', mimetype="text/html")
 
 @app.route('/style.css')
