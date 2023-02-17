@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST','GET'])
+@app.route('/')
 def default_page():
     if request.method == 'POST':
         video = request.files['file']
@@ -31,6 +31,16 @@ def display_image(image_name):
 @app.route('/script.js')
 def default_page_script():
     return send_file('templates/script.js', mimetype='text/javascript')
+
+@app.route('/upload',methods=['POST','GET'])
+def upload():
+    if request.method =='POST':
+        video = request.files['file']
+        if video:
+            filename = secure_filename(video.filename)
+            video.save(os.path.join("/Users/skate/Documents", filename))
+            return render_template('index.html')
+        return render_template('index.html')
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8083)
